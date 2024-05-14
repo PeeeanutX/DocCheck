@@ -1,0 +1,76 @@
+# Bytecode files
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+
+# Jupyter notebook files
+.ipynb_checkpoints/
+
+# Logs
+logs/
+*.log
+
+# Data files that should not be committed
+data/
+*.csv
+*.xlsx
+
+# Compiled files
+*.pyc
+*.pyd
+
+# Build directories
+build/
+dist/
+
+# Test artifacts
+htmlcov/
+.coverage
+*.egg-info/
+.cache
+.tox/
+nosetests.xml
+
+# Packaging artifacts
+.Python
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# dotenv environment variables file.
+.env
+
+# pytest cache
+.pytest_cache/
+
+# Other files and folders to ignore
+temp/
+backup/
