@@ -13,7 +13,7 @@ def setup_routes(app, model):
     @app.route('/summary', methods=['POST'])
     def generate_summary():
         data = request.get_json()
-        summary = process_data_and_generate_summary(model, data)
+        summary = process_data_and_generate_summary(data)
         return jsonify({
             'input_data': data,
             'summary': summary

@@ -1,8 +1,8 @@
 import os
 from flask import Flask, jsonify, request
-from ai.model import load_model, predict
-from api.endpoints import setup_routes
-from config.settings import APP_NAME, API_VERSION
+from src.ai.model import load_model, predict
+from src.api.endpoints import setup_routes
+from src.config.settings import APP_NAME, API_VERSION
 
 
 def create_app():

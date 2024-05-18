@@ -1,3 +1,5 @@
+import os.path
+
 import pandas as pd
 import numpy as np
 
@@ -14,5 +16,12 @@ def generate_data(num_samples):
     return df
 
 
+base_dir = os.path.abspath('DocCheck/data/raw')
+
+if not os.path.exists(base_dir):
+    os.makedirs(base_dir)
+
 df = generate_data(100)
-df.to_csv('data/raw/synthetic_data.csv', index=False)
+
+file_path = os.path.join(base_dir, 'synthetic_data.csv')
+df.to_csv(file_path, index=False)
