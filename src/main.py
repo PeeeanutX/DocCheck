@@ -1,8 +1,8 @@
 import os
 from flask import Flask, jsonify, request
-from src.ai.model import load_model, predict
-from src.api.endpoints import setup_routes
-from src.config.settings import APP_NAME, API_VERSION
+from ai.model import load_model, predict
+from api.endpoints import setup_routes
+from config.settings import APP_NAME, API_VERSION
 
 
 def create_app():
@@ -23,12 +23,13 @@ def create_app():
             data = request.get_json(force=True)
             if not data:
                 return jsonify({'error': 'No data provided'}), 400
-            prediction = predict(model, {data})
+            prediction = predict(model, data)
             return jsonify({
                 'data': data,
-                'prediction': prediction
+                'prediction': prediction.tolist()
             })
         except Exception as e:
+            app.logger.error(f"Error during prediction: {str(e)}")
             return jsonify({'error': str(e)}), 500
 
     return app

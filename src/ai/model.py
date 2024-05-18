@@ -1,4 +1,5 @@
 import pickle
+import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 
 
@@ -56,5 +57,7 @@ def predict(model, data):
     Returns:
     - predictions: The predicted labels.
     """
-    predictions = model.predict(data)
+    features_df = pd.DataFrame([data])
+
+    predictions = model.predict(features_df)
     return predictions
